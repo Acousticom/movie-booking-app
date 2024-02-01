@@ -1,7 +1,7 @@
 import React from "react";
 
 const MovieTicket = ({
-  bookingDetails,
+  movieDetails,
   selectedDate,
   quantity,
   seats,
@@ -25,13 +25,13 @@ const MovieTicket = ({
         <div className="">{seatsType(seats)}</div>
         <div className="flex flex-wrap items-center justify-around py-4">
           <img
-            src={bookingDetails?.image.medium}
+            src={movieDetails?.image.medium}
             alt=""
             className="w-[100px] rounded-xl h-[100px]"
           />
           <div className="text-gray-800">
-            <p className="text-2xl">{bookingDetails?.name}</p>
-            <p>{bookingDetails?.language}</p>
+            <p className="text-2xl">{movieDetails?.name}</p>
+            <p>{movieDetails?.language}</p>
             <p>{selectedDate}</p>
             <p>{selectedLocation}</p>
           </div>

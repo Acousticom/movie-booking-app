@@ -3,40 +3,28 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useMovies } from "../context/MoviesContext";
 
 const MovieDetails = () => {
-  const { setMovieDetails, movieDetails, setBookingDetails, bookingDetails } =
-    useMovies();
+  const { movieDetails,fetchMovieDetails } =useMovies();
   const { id } = useParams();
   const navigate = useNavigate();
-  const fetchMovieDetails = async (id) => {
-    try {
-      const response = await fetch(`https://api.tvmaze.com/shows/${id}`);
-      if (response.status === 200) {
-        const data = await response.json();
-        setMovieDetails(data);
-      }
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
   useEffect(() => {
     fetchMovieDetails(id);
   }, [movieDetails]);
 
-  const bookingHandler = (movie) => {
-    navigate("/booking-page");
-    if (bookingDetails) {
-      localStorage.setItem("movie", JSON.stringify(movie));
-    }
-    setBookingDetails(movie)
-  };
-  // useEffect(()=>{bookingHandler()},[])
-  useEffect(() => {
-    const storedMovie = localStorage.getItem("movie");
-    if (storedMovie) {
-      const movie = JSON.parse(storedMovie);
-      setBookingDetails(movie);
-    }
-  }, [bookingDetails]);
+  // const bookingHandler = (movie) => {
+  //   navigate("/booking-page");
+  //   if (bookingDetails) {
+  //     localStorage.setItem("movie", JSON.stringify(movie));
+  //   }
+  //   setBookingDetails(movie)
+  // };
+  // // useEffect(()=>{bookingHandler()},[])
+  // useEffect(() => {
+  //   const storedMovie = localStorage.getItem("movie");
+  //   if (storedMovie) {
+  //     const movie = JSON.parse(storedMovie);
+  //     setBookingDetails(movie);
+  //   }
+  // }, [bookingDetails]);
   return (
     <div className="flex justify-center">
       <div className=" max-w-[700px] border-2 flex gap-5 flex-wrap px-2 py-2 tablet:max-w-[370px]">
@@ -60,7 +48,7 @@ const MovieDetails = () => {
           <p dangerouslySetInnerHTML={{ __html: movieDetails?.summary }}></p>
           <button
             className="w-full bg-indigo-800 py-2 text-white text-lg rounded-lg mt-4"
-            onClick={() => bookingHandler(movieDetails)}
+            onClick={() => navigate('/booking-page')}
           >
             Book Ticket
           </button>

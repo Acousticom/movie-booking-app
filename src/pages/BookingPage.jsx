@@ -3,7 +3,7 @@ import { useMovies } from "../context/MoviesContext";
 import MovieTicket from "../components/MovieTicket";
 
 const BookingPage = () => {
-  const { bookingDetails, dates } = useMovies();
+  const { movieDetails, dates } = useMovies();
   const [seats, setSeats] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [selectedDate, setSelectedDate] = useState();
@@ -19,11 +19,11 @@ const BookingPage = () => {
 
   return (
     <div className="flex justify-center gap-7 items-center h-[60vh] flex-wrap">
-      {bookingDetails ? (
+      {movieDetails ? (
         <>
           <div className="border-2 w-[600px] mt-5">
             <MovieTicket
-              bookingDetails={bookingDetails}
+              movieDetails={movieDetails}
               selectedDate={selectedDate}
               quantity={quantity}
               seats={seats}
