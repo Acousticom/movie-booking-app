@@ -3,6 +3,7 @@ import './App.css';
 import Home from './pages/Home';
 import MovieDetails from './pages/MovieDetails';
 import BookingPage from './pages/BookingPage';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/movieDetails/:id' element={<MovieDetails/>}/>
         <Route path='/booking-page' element={<BookingPage/>}/>
+        <Route path='*' element={<NotFound/>}/>
       </Routes>
     </div>
   );

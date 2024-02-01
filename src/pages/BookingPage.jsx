@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useMovies } from "../context/MoviesContext";
 import MovieTicket from "../components/MovieTicket";
 
@@ -16,7 +16,6 @@ const BookingPage = () => {
     "Suraj Cinemas Noida",
   ];
   const totalPrice = quantity * seats;
-
   return (
     <div className="flex justify-center gap-7 items-center h-[60vh] flex-wrap">
       {movieDetails ? (

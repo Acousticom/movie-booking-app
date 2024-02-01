@@ -10,21 +10,6 @@ const MovieDetails = () => {
     fetchMovieDetails(id);
   }, [movieDetails]);
 
-  // const bookingHandler = (movie) => {
-  //   navigate("/booking-page");
-  //   if (bookingDetails) {
-  //     localStorage.setItem("movie", JSON.stringify(movie));
-  //   }
-  //   setBookingDetails(movie)
-  // };
-  // // useEffect(()=>{bookingHandler()},[])
-  // useEffect(() => {
-  //   const storedMovie = localStorage.getItem("movie");
-  //   if (storedMovie) {
-  //     const movie = JSON.parse(storedMovie);
-  //     setBookingDetails(movie);
-  //   }
-  // }, [bookingDetails]);
   return (
     <div className="flex justify-center">
       <div className=" max-w-[700px] border-2 flex gap-5 flex-wrap px-2 py-2 tablet:max-w-[370px]">
