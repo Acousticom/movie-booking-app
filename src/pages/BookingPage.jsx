@@ -16,8 +16,7 @@ const BookingPage = () => {
     "Suraj Cinemas Noida",
   ];
   const totalPrice = quantity * seats;
-  console.log(bookingDetails);
-  console.log(dates);
+
   return (
     <div className="flex justify-center gap-7 items-center h-[60vh] flex-wrap">
       {bookingDetails ? (
@@ -60,7 +59,7 @@ const BookingPage = () => {
                 <option value={250}>Normal(₹250)</option>
               </select>
             </div>
-            <div className="flex justify-center mb-5">
+            <div className="flex justify-center mb-5 text-center">
               <div>
                 <p className="text-lg font-semibold">Select quantity</p>
                 <button

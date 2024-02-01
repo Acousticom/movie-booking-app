@@ -6,7 +6,7 @@ import ShimmerCard from "../components/ShimmerCard";
 const Home = () => {
   const { movies,loading } = useMovies();
   return (
-    <div className="flex flex-wrap gap-6 justify-center py-10">
+    <div className="flex flex-wrap gap-4 justify-center py-10">
       {loading&&[...Array(8)].map((arr) => (
         <ShimmerCard />
       ))}
